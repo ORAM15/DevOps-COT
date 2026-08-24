@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Information about the player's level, experience, and current resource balances.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "username": { "type": "string" },
+        "level": { "type": "number" },
+        "experience": { "type": "number" },
+        "buildPower": { "type": "number" },
+        "containers": { "type": "number" },
+        "data": { "type": "number" },
+        "lastUpdated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "level", "experience", "buildPower", "containers", "data"]
+    },
+    "Building": {
+      "title": "Building",
+      "description": "Represents a physical building on the user's grid.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "type": { "type": "string", "enum": ["townhall", "git_base", "jenkins_lab", "docker_yard", "web_server", "storage_vault"] },
+        "level": { "type": "number" },
+        "gridX": { "type": "number" },
+        "gridY": { "type": "number" },
+        "lastHarvested": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "skin": { "type": "string", "enum": ["classic", "industrial", "futuristic", "retro"] }
+      },
+      "required": ["ownerId", "type", "level", "gridX", "gridY"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Global user statistics and resource counts."
+    },
+    "/users/{userId}/buildings/{buildingId}": {
+      "schema": "Building",
+      "description": "Individual building instances owned by the user."
+    }
+  }
+}

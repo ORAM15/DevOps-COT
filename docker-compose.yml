@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: always
+
+  # Note: MongoDB is replaced by Firebase in this implementation for better
+  # cloud scalability and AI Studio integration, but traditionally you 
+  # might have an image here:
+  # mongodb:
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
