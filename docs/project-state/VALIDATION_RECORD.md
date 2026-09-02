@@ -13,9 +13,12 @@
 - **Checkpoint log discoverable:** PASS — `docs/project-state/CHECKPOINT_LOG.md`
 - **Autonomous execution contract discoverable:** PASS — `docs/autonomy/AUTONOMOUS_EXECUTION_CONTRACT.md`
 - **Jules invocation contract discoverable:** PASS — `docs/autonomy/JULES_INVOCATION.md`
+- **Repository-side Jules CLI bridge present:** PASS — `scripts/invoke-autonomous-jules.sh`
+- **External-orchestrator Jules API bridge present:** PASS — `.github/workflows/invoke-autonomous-jules.yml`
+- **Live Jules execution:** NOT RUN — intentionally not executed because CP-0.2 runtime/browser validation remains blocked and this substrate work must not bypass that gate.
 - **Current checkpoint determinable:** PASS — `PROJECT_STATE.md` identifies CP-0.1
 - **Next checkpoint determinable:** BLOCKED — complete authoritative checkpoint definitions are not materialized in the repository
 - **Fresh-session continuation without conversation:** BLOCKED — exact frozen foundation/checkpoint contents required for authoritative execution are missing from the repository
 
 ## Validation conclusion
-The repository execution substrate is coherent and discoverable, but CP-0.1 cannot be declared complete because the acceptance authority required to prove completion is incomplete in the repository. No later checkpoint was executed.
+The reusable invocation machinery is now implemented on the DevOps-COT repository without executing CP-0.2. The repository still fails closed where authoritative checkpoint/foundation content is absent. No later checkpoint was executed.
