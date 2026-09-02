@@ -1,29 +1,15 @@
 # CHECKPOINT LOG
 
-## CP-0.1
+## CP-0.1: Repository Baseline Verification
+- **Status:** COMPLETE / ACCEPTED
+- **Commit Evaluated:** `2b9158b6c3bf0f141b857a805b2fd0a6b32fd450`
+- **Acceptance Evidence:** Repository inventory and configuration inspection completed; dependencies identified; `npm ci`, type-check (`npm run lint` -> `tsc --noEmit`), and `npm run build` recorded PASS; test command unavailable; frozen foundation/checkpoint authority is now materialized in `Foundation-DevOps-COT/`.
+- **Closure:** CP-0.1 accepted without feature modification.
+- **Next:** CP-0.2 — Existing Functionality Verification.
+- **Gate:** CP-0.2 requires browser/manual runtime validation and must not be bypassed.
 
-Phase: Phase 0
-Objective: Repository Baseline Verification
-Status: COMPLETE
-Prerequisites: None
-Implementation: Initialized canonical state documents
-Validation: `npm ci`, `build`, `lint` PASS
-PR: #2
-Acceptance: PASS
-Completed: 2026-09-01
-Evidence: Validated on `b4e46aa4865861dcfd793296b197c70a98e1d49a`
-Notes: Baseline evaluation is officially completed on `main`.
-
-## CP-0.2
-
-Phase: Phase 0
-Objective: Existing Functionality Verification
-Status: BLOCKED
-Prerequisites: CP-0.1
-Implementation: Static code architecture mapping and feature matrix extraction completed.
-Validation: VR-0.2-STATIC
-PR: NONE
-Acceptance: BLOCKED
-Completed: N/A
-Evidence: Generated `docs/CP-0.2-feature-matrix.md` marking features as UNKNOWN.
-Notes: Checkpoint is blocked because autonomous runtime UI verification (required by foundation) is impossible without human intervention or E2E tests.
+## CP-0.2: Existing Functionality Verification
+- **Status:** BLOCKED
+- **Commit Evaluated:** `10cea411516e872b217dc3e00b848c1482813da1`
+- **Validation Evidence:** Playwright screenshot captured showing the App loaded, but stopped at the "INITIALIZE CLUSTER ACCESS" Google Auth popup. All features marked UNKNOWN in `docs/CP-0.2-feature-matrix.md`.
+- **Notes:** CP-0.2 documentation completed safely on branch `feature/CP-0.2-existing-functionality-verification`. Blocked by inability to perform headless Google Auth.

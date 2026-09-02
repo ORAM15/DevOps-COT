@@ -3,7 +3,7 @@
 ## Identity
 
 Project: DevOps COT
-State Version: 1.1
+State Version: 1.2
 Last Updated: 2026-09-02
 Updated By: AI Agent
 
@@ -23,7 +23,7 @@ Status: BLOCKED
 
 | ID | Status | Validation | Date |
 |---|---|---|---|
-| CP-0.1 | COMPLETE | `npm ci`, `build`, `lint` (PASS) | 2026-09-01 |
+| CP-0.1 | COMPLETE | `npm ci`, `build`, `lint` (PASS) | 2026-09-02 |
 
 ## Active Work
 
@@ -36,12 +36,13 @@ Expected Outcome: A current-state feature matrix classifying each feature as WOR
 
 | ID | Blocker | Required Action |
 |---|---|---|
-| BLK-01 | Missing runtime validation capability (no E2E tests, no human intervention possible) | Requires human review/E2E test suite implementation to verify UI and Firebase features. |
+| BLK-02 | Cannot bypass Firebase Google Popup Authentication headlessly to test runtime UI | Provide a headless-compatible auth bypass, test credentials, or execute human manual testing to unlock CP-0.2. |
 
 ## Failed Attempts
 
 | ID | Attempt | Result | Lesson | Status |
 |---|---|---|---|---|
+| FA-01 | Playwright E2E UI verification | FAILED (Auth Blocked) | App is hard-gated by Google popup auth. Cannot reach internal UI mechanically. | RESOLVED (Blocked) |
 
 ## Open Decisions
 
@@ -50,20 +51,20 @@ Expected Outcome: A current-state feature matrix classifying each feature as WOR
 
 ## Required Approvals
 
-- None currently pending.
+- Owner approval/resolution required for BLK-02 (Firebase auth bypass or human testing).
 
 ## Latest Validation
 
-Validation ID: VR-0.2-STATIC
+Validation ID: VR-0.2-RUNTIME
 Result: BLOCKED
-Evidence: Static analysis complete (`docs/CP-0.2-feature-matrix.md`); runtime tests unavailable.
+Evidence: `docs/CP-0.2-feature-matrix.md` and Playwright screenshot `/home/jules/verification/screenshots/post_auth.png`
 Date: 2026-09-02
 
 ## Repository State
 
 Branch: feature/CP-0.2-existing-functionality-verification
 Working Tree: DIRTY
-Latest Commit: 55ddfebe4458f52292307feb19cddfafdfd030bd
+Latest Commit: 10cea411516e872b217dc3e00b848c1482813da1
 Active PR: NONE
 Uncommitted Changes: YES
 Unexpected Changes: NO
@@ -75,7 +76,7 @@ Unexpected Changes: NO
 
 ## Next Permitted Action
 
-Wait for human/owner resolution of BLK-01 (CP-0.2 validation capability).
+Wait for human/owner resolution of BLK-02 (Firebase Auth Gate).
 
 ## State Confidence
 
@@ -83,4 +84,4 @@ HIGH
 
 ## State Notes
 
-CP-0.2 requires runtime validation which cannot be autonomously performed without E2E testing tools.
+CP-0.2 requires runtime validation which is blocked by the Google Auth popup.
