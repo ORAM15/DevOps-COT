@@ -19,6 +19,10 @@
 - **Status:** BLOCKED / NOT EXECUTED
 - **Required validation:** Browser/manual runtime testing plus available automated tests.
 - **Governance:** CP-0.2 must not be bypassed. Features may not be classified WORKING without runtime evidence.
+- **Current Execution Blocker:** Automated Playwright UI testing is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly.
+
+## CP-0.2 Acceptance
+- **Features Classified:** UNKNOWN (All features are UNKNOWN since runtime evidence cannot be gathered by the autonomous agent).
 
 ## Validation conclusion
-CP-0.1 acceptance is demonstrated by repository baseline evidence and materialized authority. CP-0.1 is COMPLETE / ACCEPTED. The next permitted checkpoint is CP-0.2, which remains blocked pending its required runtime/browser validation activity.
+CP-0.1 acceptance is demonstrated by repository baseline evidence and materialized authority. CP-0.1 is COMPLETE / ACCEPTED. The next permitted checkpoint is CP-0.2, which remains blocked pending its required runtime/browser validation activity (currently impeded by the Google Auth popup).
