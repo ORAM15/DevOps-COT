@@ -10,7 +10,7 @@
 
 ## CP-0.2: Existing Functionality Verification
 - **Status:** BLOCKED
-- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent.
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-09-08.
 - **Acceptance Evidence:** None gathered due to execution block. Features classified as UNKNOWN.
 - **Closure:** CP-0.2 execution halted.
 - **Next:** CP-0.2 remains the next permitted checkpoint, requiring human validation or a solution to the headless auth blocker.
