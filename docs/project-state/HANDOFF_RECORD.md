@@ -1,5 +1,6 @@
 # Handoff Record
 
+## 2026-09-08 — CP-0.2 Execution Blocked
 ## 2026-09-07 — CP-0.2 Execution Blocked (Continued)
 ## 2026-09-05 — CP-0.2 Execution Blocked
 ## 2026-09-02 — CP-0.1 Autonomous Substrate Attempt

@@ -13,6 +13,7 @@
 - **Next Permitted Action:** Complete/verify CP-0.1 repository authority materialization without starting a later checkpoint; if exact frozen documents are unavailable, report the authority gap for owner resolution.
 - **Current Checkpoint:** CP-0.2 (Existing Functionality Verification)
 - **Status:** BLOCKED
+- **Current Block Date:** 2026-09-08
 - **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent.
 - **Completed Checkpoint:** CP-0.1
 - **Next Permitted Checkpoint:** CP-0.2 (Existing Functionality Verification)
