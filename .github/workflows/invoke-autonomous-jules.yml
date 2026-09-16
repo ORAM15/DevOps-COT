@@ -1,0 +1,70 @@
+name: Invoke Autonomous Jules
+
+on:
+  workflow_dispatch:
+    inputs:
+      jules_source:
+        description: 'Connected Jules source resource name for this repository'
+        required: true
+        type: string
+      starting_branch:
+        description: 'Git branch from which Jules starts this bounded attempt'
+        required: true
+        default: 'main'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository authority
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.starting_branch }}
+
+      - name: Validate autonomous contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            AGENTS.md
+            docs/foundation/FOUNDATION_MANIFEST.md
+            docs/project-state/PROJECT_STATE.md
+            docs/project-state/CHECKPOINT_LOG.md
+            docs/project-state/DECISION_LOG.md
+            docs/project-state/VALIDATION_RECORD.md
+            docs/project-state/HANDOFF_RECORD.md
+            docs/autonomy/JULES_INVOCATION.md
+          )
+          for file in "${required[@]}"; do
+            test -f "$file" || { echo "BLOCKED: missing $file"; exit 3; }
+          done
+          grep -q 'PROJECT FOUNDATION v1.0' docs/foundation/FOUNDATION_MANIFEST.md
+          grep -q '^> Inspect the current `PROJECT_STATE`' docs/autonomy/JULES_INVOCATION.md
+
+      - name: Create one bounded Jules session
+        shell: bash
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          JULES_SOURCE: ${{ inputs.jules_source }}
+          STARTING_BRANCH: ${{ inputs.starting_branch }}
+        run: |
+          set -euo pipefail
+          test -n "$JULES_API_KEY" || { echo "BLOCKED: JULES_API_KEY secret is not configured."; exit 4; }
+          test -n "$JULES_SOURCE" || { echo "BLOCKED: Jules source resource name is required."; exit 4; }
+          PROMPT="$(awk '/^> Inspect the current `PROJECT_STATE`/{capture=1} capture && /^> /{sub(/^> /, ""); print} capture && !/^> /{exit}' docs/autonomy/JULES_INVOCATION.md)"
+          test -n "$PROMPT" || { echo "BLOCKED: could not extract Jules invocation contract."; exit 3; }
+          PAYLOAD="$(jq -n \
+            --arg prompt "$PROMPT" \
+            --arg source "$JULES_SOURCE" \
+            --arg branch "$STARTING_BRANCH" \
+            '{prompt:$prompt,title:"Autonomous checkpoint execution",sourceContext:{source:$source,githubRepoContext:{startingBranch:$branch}},automationMode:"AUTO_CREATE_PR"}')"
+          curl --fail-with-body --silent --show-error \
+            -X POST \
+            -H 'Content-Type: application/json' \
+            -H "x-goog-api-key: $JULES_API_KEY" \
+            --data "$PAYLOAD" \
+            'https://jules.googleapis.com/v1alpha/sessions'
