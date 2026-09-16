@@ -11,3 +11,9 @@
 - **Blocker:** The repository does not yet contain the complete byte-level contents of all frozen foundation documents or a complete authoritative checkpoint definition. Agents must not reconstruct missing authority from conversation memory.
 - **Latest Validation:** Existing baseline validation recorded as PASS for `npm ci`, `npm run lint`, and `npm run build`; test command unavailable.
 - **Next Permitted Action:** Complete/verify CP-0.1 repository authority materialization without starting a later checkpoint; if exact frozen documents are unavailable, report the authority gap for owner resolution.
+- **Current Checkpoint:** CP-0.2 (Existing Functionality Verification)
+- **Status:** BLOCKED
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent.
+- **Completed Checkpoint:** CP-0.1
+- **Next Permitted Checkpoint:** CP-0.2 (Existing Functionality Verification)
+- **Gate:** CP-0.2 requires browser/manual runtime validation. Do not bypass this gate or classify features as WORKING without evidence.
