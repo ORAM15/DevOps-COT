@@ -1,5 +1,6 @@
 # Handoff Record
 
+## 2026-09-12 — CP-0.2 Execution Blocked
 ## 2026-09-11 — CP-0.2 Execution Blocked
 
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
