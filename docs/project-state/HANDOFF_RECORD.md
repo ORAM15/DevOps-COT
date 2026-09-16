@@ -1,6 +1,8 @@
 # Handoff Record
 
 ## 2026-09-13 — CP-0.2 Execution Blocked
+## 2026-09-12 — CP-0.2 Execution Blocked
+## 2026-09-11 — CP-0.2 Execution Blocked
 
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
 - **Current checkpoint:** CP-0.2 — Existing Functionality Verification
@@ -12,6 +14,18 @@
 - **Gate:** CP-0.2 requires browser/manual runtime validation plus available automated tests. Do not bypass this gate.
 - **Fresh-agent instruction:** Re-read repository state and authoritative checkpoint material before acting. CP-0.2 is blocked by an unbypassable headless auth popup. Do not attempt CP-0.2 until this blocker is resolved by human intervention or an alternative validation method is provided.
 
+## 2026-09-08 — CP-0.2 Execution Blocked
+## 2026-09-07 — CP-0.2 Execution Blocked (Continued)
+## 2026-09-05 — CP-0.2 Execution Blocked
+## 2026-09-02 — CP-0.1 Autonomous Substrate Attempt
+
+- **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
+- **Current checkpoint:** CP-0.1
+- **Branch:** `checkpoint/CP-0.1-autonomous-substrate`
+- **Completed in this attempt:** Repository-discoverable agent instructions, foundation authority manifest, autonomous execution contract, and external Jules invocation contract.
+- **Validation:** Existing install/type-check/build baseline is recorded as passing; autonomy discoverability checks pass.
+- **Blocked:** The complete frozen foundation documents and complete authoritative checkpoint acceptance definitions are not materialized in the repository. The agent must not reconstruct them from conversational memory.
+- **Next action:** Materialize/verify the canonical frozen foundation and checkpoint definitions, then re-evaluate CP-0.1 acceptance. Do not start a later checkpoint until CP-0.1 is accepted.
 ## 2026-09-10 — CP-0.2 Execution Blocked
 
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
