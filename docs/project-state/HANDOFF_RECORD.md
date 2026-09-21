@@ -90,3 +90,17 @@
 - **Next permitted checkpoint:** CP-0.2 — Existing Functionality Verification (remains next permitted)
 - **Gate:** CP-0.2 requires browser/manual runtime validation plus available automated tests. Do not bypass this gate.
 - **Fresh-agent instruction:** Re-read repository state and authoritative checkpoint material before acting. CP-0.2 is blocked by an unbypassable headless auth popup. Do not attempt CP-0.2 until this blocker is resolved by human intervention or an alternative validation method is provided.
+
+## 2026-09-20 — Execution Blocked (State Inconsistency)
+
+- **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
+- **Current checkpoint:** UNDETERMINED
+- **Status:** BLOCKED
+- **Blocker:** STATE INCONSISTENCY DETECTED.
+  - `PROJECT_STATE.md`: Contains duplicate/conflicting entries. It lists CP-0.1 as both "In Progress" and "Completed", and CP-0.2 as "BLOCKED" while also saying "Not advanced; CP-0.1 remains the active checkpoint."
+  - `CHECKPOINT_LOG.md`: Lists CP-0.1 twice, once as "In Progress" and once as "COMPLETE / ACCEPTED".
+  - Required resolution: Human review or automated cleanup is required to reconcile the duplicate/conflicting state entries before execution can continue safely.
+- **Acceptance evidence:** None gathered due to execution block.
+- **Gate:** Foundation Rule 52 requires halting execution and not guessing when state contradictions are found.
+- **Fresh-agent instruction:** Do not attempt to execute a checkpoint until the state inconsistency in `PROJECT_STATE.md` and `CHECKPOINT_LOG.md` is resolved.
+- **Fresh-agent instruction:** Re-read repository state and authoritative checkpoint material before acting. CP-0.2 is blocked by an unbypassable headless auth popup. Do not attempt CP-0.2 until this blocker is resolved by human intervention or an alternative validation method is provided.
