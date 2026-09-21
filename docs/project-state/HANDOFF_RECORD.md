@@ -1,5 +1,6 @@
 # Handoff Record
 
+## 2026-09-18 — CP-0.2 Execution Blocked
 ## 2026-09-17 — Execution Blocked & State Inconsistency Detected
 
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
