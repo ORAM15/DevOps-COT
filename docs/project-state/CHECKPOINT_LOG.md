@@ -12,6 +12,17 @@
 - **Status:** BLOCKED
 - **Attempted:** 2026-09-29
 - **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-09-29.
+- **Attempted:** 2026-09-28
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-09-28.
+- **Attempted:** 2026-09-25
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-09-25.
+- **Acceptance Evidence:** None gathered due to execution block. Features classified as UNKNOWN.
+- **Closure:** CP-0.2 execution halted.
+- **Next:** CP-0.2 remains the next permitted checkpoint, requiring human validation or a solution to the headless auth blocker.
+## CP-0.2: Existing Functionality Verification (Attempt 2026-09-24)
+- **Status:** BLOCKED
+- **Attempted:** 2026-09-24
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-09-24.
 - **Acceptance Evidence:** None gathered due to execution block. Features classified as UNKNOWN.
 - **Closure:** CP-0.2 execution halted.
 - **Next:** CP-0.2 remains the next permitted checkpoint, requiring human validation or a solution to the headless auth blocker.
