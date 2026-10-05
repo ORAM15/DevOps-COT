@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, User } from 'firebase/auth';
+import { onAuthStateChanged, signInWithPopup, signInAnonymously, GoogleAuthProvider, User } from 'firebase/auth';
 import { auth, db } from './lib/firebase';
 import { doc, getDoc, setDoc, onSnapshot, collection, query, updateDoc, increment } from 'firebase/firestore';
 import { BUILDINGS } from './constants/game';
@@ -80,6 +80,18 @@ export default function App() {
       await signInWithPopup(auth, provider);
     } catch (error) {
       console.error("Login Error:", error);
+    }
+  };
+
+  // Anonymous Firebase auth gives automated/headless validation a non-popup path.
+  // It still creates a real Firebase-authenticated user, so Firestore security rules
+  // and the normal game persistence path remain exercised. Google remains the
+  // primary production login path.
+  const handleGuestLogin = async () => {
+    try {
+      await signInAnonymously(auth);
+    } catch (error) {
+      console.error("Guest Login Error:", error);
     }
   };
 
@@ -397,14 +409,23 @@ export default function App() {
             Architect, scale, and secure your cloud infrastructure in a gamified DevOps ecosystem.
           </p>
 
-          <button
-            onClick={handleLogin}
-            className="group relative flex items-center gap-4 bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-indigo-900/40 transition-all active:scale-95"
-          >
-            <LogIn className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            INITIALIZE CLUSTER ACCESS
-            <div className="absolute inset-0 rounded-2xl ring-2 ring-indigo-400 ring-offset-4 ring-offset-slate-950 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
+          <div className="flex flex-col items-center gap-3">
+            <button
+              onClick={handleLogin}
+              className="group relative flex items-center gap-4 bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-indigo-900/40 transition-all active:scale-95"
+            >
+              <LogIn className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              INITIALIZE CLUSTER ACCESS
+              <div className="absolute inset-0 rounded-2xl ring-2 ring-indigo-400 ring-offset-4 ring-offset-slate-950 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
+
+            <button
+              onClick={handleGuestLogin}
+              className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 hover:text-indigo-300 transition-colors"
+            >
+              Continue as Guest · Automated Test Access
+            </button>
+          </div>
 
           <div className="mt-12 flex items-center gap-8 text-slate-400">
              <div className="flex flex-col items-center">

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
@@ -11,8 +10,6 @@
   --color-sky-neon: #d946ef;
   --color-sky-solar: #f59e0b;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;900&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
