@@ -6,6 +6,13 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Firebase Google sign-in uses a popup. Allow the auth popup to retain the
+  // opener relationship so browsers do not emit COOP window.closed warnings.
+  app.use((_req, res, next) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+    next();
+  });
+
   // Mock API routes for DevOps actions simulation
   app.get("/api/pipeline/status", (req, res) => {
     res.json({ 
