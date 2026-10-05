@@ -36,7 +36,7 @@ The reusable invocation machinery is now implemented on the DevOps-COT repositor
 - **Status:** BLOCKED / NOT EXECUTED
 - **Required validation:** Browser/manual runtime testing plus available automated tests.
 - **Governance:** CP-0.2 must not be bypassed. Features may not be classified WORKING without runtime evidence.
-- **Current Execution Blocker:** Automated Playwright UI testing is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly.
+- **Current Execution Blocker:** Automated Playwright UI testing is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. (Confirmed blocked again on 2026-09-29).
 
 ## CP-0.2 Acceptance
 - **Features Classified:** UNKNOWN (All features are UNKNOWN since runtime evidence cannot be gathered by the autonomous agent).
