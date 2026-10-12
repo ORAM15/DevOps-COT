@@ -239,6 +239,9 @@
 - **Next permitted checkpoint:** CP-0.2 — Existing Functionality Verification (remains next permitted)
 - **Gate:** CP-0.2 requires browser/manual runtime validation plus available automated tests. Do not bypass this gate.
 - **Fresh-agent instruction:** Re-read repository state and authoritative checkpoint material before acting. CP-0.2 is blocked by an unbypassable headless auth popup. Do not attempt CP-0.2 until this blocker is resolved by human intervention or an alternative validation method is provided.
+
+## 2026-10-09 — CP-0.2 Execution Blocked
+
 ## 2026-10-08 — CP-0.2 Execution Blocked
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
 - **Current checkpoint:** CP-0.2 — Existing Functionality Verification
