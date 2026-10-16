@@ -1,4 +1,16 @@
 # Checkpoint Log
+
+## 2026-10-16 — Execution Blocked (State Inconsistency)
+- **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
+- **Current checkpoint:** UNDETERMINED
+- **Status:** BLOCKED
+- **Blocker:** STATE INCONSISTENCY DETECTED.
+  - `PROJECT_STATE.md`: Contains duplicate/conflicting entries (multiple `State Version`, `Last Updated`, `Active Branch`, and `State Notes` fields).
+  - Required resolution: Human review or automated cleanup is required to reconcile the duplicate/conflicting state entries before execution can continue safely.
+- **Acceptance evidence:** None gathered due to execution block.
+- **Gate:** Foundation Rule 52 requires halting execution and not guessing when state contradictions are found.
+- **Fresh-agent instruction:** Do not attempt to execute a checkpoint until the state inconsistency in `PROJECT_STATE.md` is resolved.
+
 ## 2026-10-12 — CP-0.2 Execution Blocked
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
 - **Current checkpoint:** CP-0.2 — Existing Functionality Verification

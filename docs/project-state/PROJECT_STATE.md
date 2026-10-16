@@ -19,7 +19,7 @@
 - **Repository:** ORAM15/DevOps-COT
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
 - **Current Phase:** Phase 0
-- **Current Checkpoint:** CP-0.2 (Existing Functionality Verification)
+- **Current Checkpoint:** UNDETERMINED
 - **Status:** BLOCKED
 - **Active Branch:** `fix/CP-0.2-record-blocker-20261011`
 - **Current Block Date:** 2026-10-11
@@ -35,9 +35,9 @@
 - **Current Block Date:** 2026-10-06
 - **Active Branch:** `fix/CP-0.2-record-blocker-2026-10-12`
 - **Current Block Date:** 2026-10-12
-- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent.
+- **Blocker:** STATE INCONSISTENCY DETECTED. The state file contains duplicate/conflicting entries for multiple fields. Human review or automated cleanup is required to reconcile this state file before execution can safely proceed (Rule 52). Automated Playwright UI testing is also blocked by a Firebase Google Auth popup.
 - **Latest Validation:** Existing baseline validation recorded as PASS for `npm ci`, `npm run lint`, and `npm run build`; test command unavailable.
-- **Next Permitted Action:** CP-0.2 remains the next permitted checkpoint, requiring human validation or a solution to the headless auth blocker.
+- **Next Permitted Action:** Resolve the state inconsistencies in this file. Once resolved, human intervention is required to resolve the Firebase Google Auth popup blocker on CP-0.2.
 - **Completed Checkpoint:** CP-0.1
 - **Next Permitted Checkpoint:** CP-0.2 (Existing Functionality Verification)
 - **Gate:** CP-0.2 requires browser/manual runtime validation. Do not bypass this gate or classify features as WORKING without evidence.
@@ -92,6 +92,7 @@ Expected Outcome: Verification of baseline features to establish working status.
 
 | ID | Blocker | Required Action |
 |---|---|---|
+| UNDETERMINED | STATE INCONSISTENCY DETECTED. The state file contains duplicate/conflicting entries. Execution halted (Rule 52). | Human review or automated cleanup is required to reconcile this state file before execution can safely proceed. |
 | CP-0.2 | Automated Playwright UI testing is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. | Human validation or a solution to the headless auth blocker is required. |
 
 ## Failed Attempts
@@ -142,7 +143,7 @@ Unexpected Changes: NO
 
 ## Next Permitted Action
 
-Wait for human intervention to resolve the Firebase Google Auth popup blocker on CP-0.2 or provide alternative runtime validation. Do not attempt CP-0.2 until unblocked.
+Resolve the STATE INCONSISTENCY DETECTED in this file. Once resolved, human intervention is required to resolve the Firebase Google Auth popup blocker on CP-0.2. Do not attempt CP-0.2 until unblocked.
 
 ## State Confidence
 
