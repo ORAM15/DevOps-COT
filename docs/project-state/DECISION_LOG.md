@@ -1,6 +1,8 @@
 # Decision Log
 
 | Date | Decision | Rationale | Status |
+|---|---|---|---|
+| 2026-10-20 | Halted CP-0.2 execution | Automated Playwright UI testing is blocked by an unbypassable Firebase Google Auth popup. Runtime verification cannot be completed autonomously. | Blocked |
 | 2026-10-09 | Halted CP-0.2 execution | Automated Playwright UI testing is blocked by an unbypassable Firebase Google Auth popup. Runtime verification cannot be completed autonomously. | Blocked |
 |---|---|---|---|
 | 2026-10-07 | Halted CP-0.2 execution | Automated Playwright UI testing is blocked by an unbypassable Firebase Google Auth popup. Runtime verification cannot be completed autonomously. | Blocked |
