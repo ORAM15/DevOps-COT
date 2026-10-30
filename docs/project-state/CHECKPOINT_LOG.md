@@ -1,5 +1,11 @@
 # Checkpoint Log
 
+## 2026-10-30 — CP-0.2 Execution Blocked
+- **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
+- **Current checkpoint:** CP-0.2 — Existing Functionality Verification
+- **Status:** BLOCKED
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-10-30.
+
 ## 2026-10-13 — CP-0.2 Execution Blocked
 - **Foundation:** PROJECT FOUNDATION v1.0 — FROZEN
 - **Current checkpoint:** CP-0.2 — Existing Functionality Verification
@@ -28,6 +34,8 @@
 
 ## CP-0.2: Existing Functionality Verification
 - **Status:** BLOCKED
+- **Attempted:** 2026-10-30
+- **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-10-30.
 - **Attempted:** 2026-10-09
 - **Blocker:** Automated Playwright UI testing for the project is blocked by a Firebase Google Auth popup that cannot be bypassed headlessly. Runtime validation cannot be completed by autonomous agent. Block re-verified on 2026-10-09.
 - **Attempted:** 2026-10-07
