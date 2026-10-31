@@ -1,5 +1,11 @@
 # Validation Record
 
+## 2026-10-31 — CP-0.2 Execution Blocked
+- **Validation Attempt:** Automated testing (Playwright).
+- **Result:** BLOCKED
+- **Reason:** Firebase Google Auth popup prevents headless interaction.
+- **Impact:** Runtime validation incomplete; CP-0.2 remains BLOCKED.
+
 ## 2026-10-06 — CP-0.2 Execution Blocked
 - **Validation Attempt:** Automated testing (Playwright).
 - **Result:** BLOCKED
